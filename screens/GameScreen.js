@@ -3,7 +3,9 @@ import { StyleSheet, Text, View,SafeAreaView,Alert } from 'react-native'
 import Title from '../components/ui/Title';
 import NumberContainer from '../components/game/NumberContainer';
 import PrimaryButton from '../components/ui/PrimaryButton';
-
+import Card from '../components/ui/Card';
+import InstructionText from '../components/ui/InstructionText';
+import {Ionicons}  from '@expo/vector-icons';
 
 
 function generateRandomBetween(min, max, exclude) {
@@ -69,14 +71,27 @@ function GameScreen ({userNumber, onGameOver}) {
         <View style={styles.screen}>
             <Title>Opponet's Guess</Title>
             <NumberContainer>{currentGuess}</NumberContainer>
-            <View>
-                <Text>Higher or Lower ?</Text>
-                <View>
-                   <PrimaryButton onPress={nextGuessHandler.bind(this, 'greater')}>+</PrimaryButton>
-                <PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')}>-</PrimaryButton>
+            <Card>
+                <InstructionText style={styles.instructionText}>Higher or Lower ?</InstructionText>
+                <View style={styles.buttons}>
+                  <View style ={styles.buttonContainer}>
+                   <PrimaryButton onPress={nextGuessHandler.bind(this, 'greater')}>
+                    <Ionicons name="add-sharp" size={24} color="white" />
+                   </PrimaryButton>
+                   </View>
+
+
+                   <View style ={styles.buttonContainer}>
+                    
+                    <PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')}>
+                      <Ionicons name="remove" size={24} color="white" />
+                    </PrimaryButton>
+                   </View>
+
+
                 </View>
                
-            </View>
+            </Card>
             {/* <View>LOG ROunds</View> */}
         </View>
         </SafeAreaView>
@@ -92,6 +107,16 @@ const styles = StyleSheet.create({
         padding: 24,
       
     },
-
-
+    buttons: {
+      flexDirection: 'row',
+      marginTop: 12,
+    },
+    buttonContainer:{
+      flex: 1,
+    },
+    instructionText: {
+      marginTop: 12,
+    
+    },
+    
 })

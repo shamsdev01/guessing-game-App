@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { StyleSheet,ImageBackground,SafeAreaView }from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import {useFonts} from 'expo-font'
-import AppLoading from 'expo-app-loading';
+// import AppLoading from 'expo-app-loading';
+import * as SplashScreen from 'expo-splash-screen';
 
 import StartGameScreen from './screens/StartGameScreen';
 import GameScreen from './screens/GameScreen';
@@ -23,7 +24,7 @@ export default function App() {
 
   if (!fontsLoaded){
     return(
-      <AppLoading />
+      <SplashScreen />
     )
   }
 

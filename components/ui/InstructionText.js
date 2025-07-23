@@ -10,11 +10,10 @@ function InstructionText ({children, style}) {
 export default InstructionText;
 
 const styles = StyleSheet.create({
-         instructionText:{
+instructionText:{
+    fontFamily: 'open-sans',
     color: Colors.accent500,
     fontSize: 24,
-    // fontWeight: 'bold',
-    textAlign: 'center',
-    // marginVertical: 8,
+   
   }
 })

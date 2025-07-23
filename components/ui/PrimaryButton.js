@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     text:{
         color: 'white',
         textAlign: 'center',
+        fontFamily: 'open-sans',
 
 
     },

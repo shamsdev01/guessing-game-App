@@ -24,7 +24,7 @@ export default function App() {
   useEffect(() => {
     async function prepare() {
       if (fontsLoaded) {
-        await SplashScreen.hideAsync(); // 👈 hide manually when fonts load
+        await SplashScreen.hideAsync(); 
       }
     }
     prepare();
@@ -37,7 +37,7 @@ export default function App() {
   }, [fontsLoaded]);
 
   if (!fontsLoaded) {
-    return null; // 👈 don't render UI until fonts are loaded
+    return null; 
   }
 
   function pickerNumberHandler(pickedNumber) {
@@ -77,7 +77,7 @@ export default function App() {
         resizeMode="cover"
         style={styles.container}
         imageStyle={styles.backgroundImage}
-        onLayout={onLayoutRootView} // 👈 Required for splash screen to hide
+        onLayout={onLayoutRootView} 
       >
         <SafeAreaView style={styles.container}>{screen}</SafeAreaView>
       </ImageBackground>
